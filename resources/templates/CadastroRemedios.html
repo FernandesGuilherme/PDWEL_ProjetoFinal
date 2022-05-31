@@ -114,16 +114,13 @@
                 </div>
                 <div class="container col-4 col-sm-4 col-md-3 col-lg-12 col-lx-7 text-center">
                     <a href="#" class="navbar-brand text-center col-11">
-                        <img alt="Brand" src="/images/icon.svg" class="img-responsive text-center">
+                        <img alt="Brand" src="../static/images/icon.svg" class="img-responsive text-center">
                     </a>
                 </div> 
-
             </nav>
 
             <!--
             <div class="jumbotron">
-    
-    
                 <selection class="jumbotron text-center">
                     <div class="container">
                         <h1 class="jumbotron-heading footer">Bem Vindo ao Meu Remédio!</h1>
@@ -140,53 +137,45 @@
             <div class="modal">
                 <div class="text-center" id="form">
                     <img class="formulario-icon-cadastro" src="../static/assets/img/cadastro-form-icon.svg" alt="Ícone Meu Remédio">
-                    <h2 class='form-h2' th:text="#{cadremform.title}"></h2>
+                    
                     <form method="post" name="formCadastroRM">
                         <div class="input-group">
-                            <label th:text="#{cadremform.remedy}" class="sr-only" for="RM_Nome"></label>
-                            <input th:placeholder="#{cadremplaceholder.remedy}" type="text" id="RM_Nome" name="RM_Nome"
+                            <label  class="sr-only" for="RM_Nome"></label>
+                            <input placeholder ="Nome" 
+                                   type="text" 
+                                   id="RM_Nome" 
+                                   name="RM_Nome"
+                                   required
                                    />
                         </div>
                         <div class="input-group">
-                            <label th:text="#{cadremform.dosage}" class="sr-only" for="RM_Dosagem"></label>
-                            <input th:placeholder="#{cadremplaceholder.dosage}" type="text" id="RM_Dosagem" name="RM_Dosagem"/>
-
+                            <labelclass="sr-only" for="RM_Dosagem"></label>
+                            <input placeholder="Dosagem" 
+                                   type="text" 
+                                   id="RM_Dosagem" 
+                                   name="RM_Dosagem"
+                            />    
                         </div>
-                        <small th:text="#{cadremform.dosagesmall}" class="help"></small>
+                        <small>Ex: "1" - "10" - "500"</small>
+                        
                         <div class="input-group">
-                            <label th:text="#{cadremform.dosageunit}" class="sr-only" for="RM_UnidadeDosagem"></label>
-                            <input th:placeholder="#{cadremplaceholder.dosageunit}" type="text" id="RM_UnidadeDosagem"
-                                   name="RM_UnidadeDosagem"/>
-
+                            <label class="sr-only" for="RM_UnidadeDosagem"></label>
+                            <input placeholder="Unidade de dosagem" 
+                                   type="text" 
+                                   id="RM_UnidadeDosagem" 
+                                   name="RM_UnidadeDosagem"
+                                />
                         </div>
-                        <small th:text="#{cadremform.dosageunitsmall}" class="help"></small>
-
-                        <div class="input-group-radio">
-                            <small><strong th:text="#{cadremform.susremedy}" class="sus-medicine" ></strong></small>
-                            <!--<label th:text="#{cadremform.susremedy}" class="sr-only" for="RM_RetiradoSus"></label>-->
-                            <div class="radio-container">
-
-                                <input class="radio-yes" th:text="#{cadremform.radioyes}" type="radio" id="RM_RetiradoSus" value="Sim" name="RM_RetiradoSus"/>
-                                <input class="radio-no" th:text="#{cadremform.radiono}" type="radio" id="RM_RetiradoSusNo" value="Não" name="RM_RetiradoSus"/>
-
-                            </div>
-                        </div>
+                        <small>Ex: "MG" - "ML"</small>
 
                         <div class="input-group actions">
-                            <a th:text="#{cadremform.cancel}" id="cancelar" href="/remedios" class="button cancel"></a>
-                            <button th:text="#{cadremform.submit}" name="action" id="confirmar" class="button save" type="submit"></button>
+                            <a id="cancelar" href="/remedios" class="button cancel">Cancelar</a>
+                            <button name="action" id="confirmar" class="button save" type="submit">Salvar</button>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-
-
-
-
-
-
-
 
 
         <!-- Scripts da página -->
