@@ -1,5 +1,7 @@
 <x-guest-layout>
     <x-auth-card>
+        <link rel="stylesheet" href="{{url('assets/bootstrap/css/bootstrap.min.css')}}">
+
         <x-slot name="logo">
             <a href="/">
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
@@ -11,6 +13,8 @@
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
+    
+        
 
         <form method="POST" action="{{ route('login') }}">
             @csrf
