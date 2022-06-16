@@ -22,6 +22,7 @@ Route::prefix('/medicines')->group(function(){
     Route::post('/', [MedicineController::class, 'store'])->name('medicines-store');
     Route::get('/{id}/edit', [MedicineController::class, 'edit'])->where('id', '[0-9]+')->name('medicines-edit');
     Route::put('/{id}', [MedicineController::class, 'update'])->where('id', '[0-9]+')->name('medicines-update');
+    Route::delete('/{id}', [MedicineController::class, 'destroy'])->where('id', '[0-9]+')->name('medicines-destroy');
 });
 
 Route::get('/dashboard', function () {

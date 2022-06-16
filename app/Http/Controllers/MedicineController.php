@@ -97,6 +97,7 @@ class MedicineController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Medicine::where('id',$id)->delete();
+        return redirect()->route('medicines-index');
     }
 }
