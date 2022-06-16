@@ -14,7 +14,13 @@ use App\Http\Controllers\MedicineController;
 |
 */
 
-//Route::resource('/medicines', MedicineController::class);
+
+
+Route::prefix('/medicines')->group(function(){
+    Route::get('/', [MedicineController::class, 'index'])->name('medicines-index');
+    Route::get('/create', [MedicineController::class, 'create'])->name('medicines-create');
+    Route::post('/', [MedicineController::class, 'store'])->name('medicines-store');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Medicine;
 use Illuminate\Http\Request;
 
 class MedicineController extends Controller
@@ -13,7 +14,9 @@ class MedicineController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $medicines = Medicine::all();
+        return view('medicines.index', ['medicines'=>$medicines]);
+        
     }
 
     /**
@@ -23,7 +26,7 @@ class MedicineController extends Controller
      */
     public function create()
     {
-        //
+        return view('medicines.create');
     }
 
     /**
@@ -34,7 +37,8 @@ class MedicineController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       Medicine::create($request->all());
+       return redirect()->route('medicines-index');
     }
 
     /**
