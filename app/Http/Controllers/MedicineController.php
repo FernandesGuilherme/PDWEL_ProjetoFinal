@@ -60,7 +60,13 @@ class MedicineController extends Controller
      */
     public function edit($id)
     {
-        //
+        $medicines = Medicine::where('id',$id)->first();
+        if(!empty($medicines)){
+            return view('medicines.edit', ['medicines'=>$medicines]);
+        }else{
+            return redirect()->route('medicines-index');
+        }
+        
     }
 
     /**
@@ -72,7 +78,15 @@ class MedicineController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = [
+            'name' => $request->name,
+            'tipo' => $request->tipo,
+            'duracao' => $request->duracao,
+            'data_inicio' => $request->data_inicio,
+            'id_user' => $request->id_user,
+        ];
+        Medicine::where('id',$id)->update($data);
+        return redirect()->route('medicines-index');
     }
 
     /**

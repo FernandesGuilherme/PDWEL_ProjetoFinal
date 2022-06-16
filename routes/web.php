@@ -20,6 +20,8 @@ Route::prefix('/medicines')->group(function(){
     Route::get('/', [MedicineController::class, 'index'])->name('medicines-index');
     Route::get('/create', [MedicineController::class, 'create'])->name('medicines-create');
     Route::post('/', [MedicineController::class, 'store'])->name('medicines-store');
+    Route::get('/{id}/edit', [MedicineController::class, 'edit'])->where('id', '[0-9]+')->name('medicines-edit');
+    Route::put('/{id}', [MedicineController::class, 'update'])->where('id', '[0-9]+')->name('medicines-update');
 });
 
 Route::get('/dashboard', function () {
