@@ -28,8 +28,10 @@
                             </h2>
                         </div>
 
-                        <div class="col-sm-2">
-                            <a href="{{ route('medicines-create') }}" class="btn btn-success">Novo Medicamento</a>
+                        <div class="col-sm-2 justify-content-center">
+                            <a href="{{ route('medicines-create') }}" class="btn btn-success ml-3">
+                                Adicionar
+                            </a>
                         </div>
                     </div>
 
