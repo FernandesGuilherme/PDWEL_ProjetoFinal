@@ -21,9 +21,21 @@
     <div class="container mt-5">
             <x-app-layout>
                 <x-slot name="header">
-                    <h2 class="container">
-                        {{ __('Lista de Medicamentos Cadastrados') }}
-                    </h2>
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <h2 class="container">
+                                {{ __('Lista de Medicamentos Cadastrados') }}
+                            </h2>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <a href="{{ route('medicines-create') }}" class="btn btn-success">Novo Medicamento</a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        
+                    </div>
                 </x-slot>
     
             <table class="table text-center">
@@ -67,9 +79,7 @@
             </tbody>
             </table>
 
-            <div class="d-flex justify-content-end">
-                <a href="{{ route('medicines-create') }}" class="btn btn-success">Novo medicamento</a>
-            </div>
+            
 
         </x-app-layout>
     </div>
