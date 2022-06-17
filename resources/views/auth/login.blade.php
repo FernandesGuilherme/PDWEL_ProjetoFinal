@@ -44,28 +44,33 @@
                 </label>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
+            <div class="flex items-center justify-center mt-4">
+                <div class="row text-center">
+                    <div class="col-sm-12">
+                            @if (Route::has('login'))
+                                @auth
+                                    <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+                                @else
+                                    @if (Route::has('register'))
+                                        <a href="{{ route('register') }}" class="ml-3 text-sm text-gray-700 dark:text-gray-500 underline">Cadastre-se</a>
+                                    @endif
+                                @endauth  
+                            @endif
+                        </div>
+                    <div class="col-sm-12">
+                        @if (Route::has('password.request'))
+                            <a class="ml-3 underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
+                                {{ __('Forgot your password?') }}
+                            </a>
+                        @endif
+                    </div>
+                </div>
+            </div>
 
+            <div class="flex items-center justify-center mt-4">
                 <x-button class="ml-3">
                     {{ __('Log in') }}
                 </x-button>
-
-                @if (Route::has('login'))
-                    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                        @auth
-                            <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                        @else
-                            @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Cadastre-se</a>
-                            @endif
-                        @endauth
-                    </div>
-                @endif
             </div>
         </form>
     </x-auth-card>
