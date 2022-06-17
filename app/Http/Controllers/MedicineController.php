@@ -16,7 +16,6 @@ class MedicineController extends Controller
     {
         $medicines = Medicine::all();
         return view('medicines.index', ['medicines'=>$medicines]);
-        
     }
 
     /**
