@@ -55,10 +55,10 @@
             @foreach($medicines as $medicine)
                 <tr>
                 <th scope="row">{{$medicine->id}}</th>
-                <th>{{$medicine->name}}</th>
-                <th>{{$medicine->tipo}}</th>
-                <th>{{$medicine->data_inicio}}</th>
-                <th>{{$medicine->duracao}}</th>
+                <td>{{$medicine->name}}</td>
+                <td>{{$medicine->tipo}}</td>
+                <td>{{$medicine->data_inicio}}</td>
+                <td>{{$medicine->duracao}}</td>
                 <th class="d-flex justify-content-center">
                     <a href="{{ route('medicines-edit', ['id'=>$medicine->id])}}" class="btn btn-primary mr-2 center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
