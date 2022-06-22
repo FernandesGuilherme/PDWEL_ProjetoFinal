@@ -8,12 +8,12 @@ Amanda Queiroz Carreiro SP3040836 <br>
 Guilherme Fernandes Lima SP3040674 <br>
 Samy Almeida SP304078X <br>
 
-Instruções de deployment:
-1 - Inicie o Apache e o MySQL no XAMPP
-2 - Clone o repositório com o comando git clone https://github.com/FernandesGuilherme/PDWEL_ProjetoFinal.git
-3 - Abra a pasta clonada no VSCode e no terminal dele rode o comando composer install para instalar as dependências
-4 - Renomeie o arquivo .env.example para .env
-5 - No navegador digite localhost/phpmyadmin e crie um banco de dados chamado laravel
-6 - No terminal do VSCode rode o comando php artisan migrate para que as tabelas sejam criadas no banco de dados local
-7 - Ainda no terminal, rode o comando php artisan serve para subir a aplicação e clique no link que mostrará na tela 
+Instruções de deployment:<br>
+1 - Inicie o Apache e o MySQL no XAMPP<br>
+2 - Clone o repositório com o comando git clone https://github.com/FernandesGuilherme/PDWEL_ProjetoFinal.git<br>
+3 - Abra a pasta clonada no VSCode e no terminal dele rode o comando composer install para instalar as dependências<br>
+4 - Renomeie o arquivo .env.example para .env<br>
+5 - No navegador digite localhost/phpmyadmin e crie um banco de dados chamado laravel<br>
+6 - No terminal do VSCode rode o comando php artisan migrate para que as tabelas sejam criadas no banco de dados local<br>
+7 - Ainda no terminal, rode o comando php artisan serve para subir a aplicação e clique no link que mostrará na tela <br>
 
