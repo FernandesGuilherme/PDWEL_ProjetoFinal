@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Medicine;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
 
@@ -17,7 +18,9 @@ class MedicineController extends Controller
      */
     public function index()
     {
-        $medicines = Medicine::all();
+        //$medicines = Medicine::all();
+        $user = User::find(auth()->id());
+        $medicines = $user->medicines()->get();
         return view('medicines.index', ['medicines'=>$medicines]);
     }
 

@@ -18,5 +18,9 @@ class Medicine extends Model
         'id_user'
     ];
 
+    public function usuario(){
+        return $this->belongsTo(User::class, 'id_user', 'id');
+    }
+
     
 }
