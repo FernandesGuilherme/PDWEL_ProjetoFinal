@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 
 class MedicineController extends Controller
 {
+    private $objUser;
+
+    public function __construct(){
+        $this->objUser=new User();
+    }
 
     /**
      * Display a listing of the resource.
@@ -31,7 +36,8 @@ class MedicineController extends Controller
      */
     public function create()
     {
-        return view('medicines.create');
+        $users = $this->objUser->all();
+        return view('medicines.create', compact('users'));
     }
 
     /**

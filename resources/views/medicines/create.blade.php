@@ -31,8 +31,13 @@
                     <input type="number" class="form-control" name="duracao" placeholder="Digite a quantidade de dias do uso do medicamento">
                 </div>
                 <div class="form-group">
-                    <label for="id_user">ID do usuario:</label>
-                    <input type="number" class="form-control" name="id_user" placeholder="Digite o ID do usuario que usa o medicamento">
+                    <label for="usuario">Usuário:</label>
+                    <select class="form-control" name="id_user" id="id_user">
+                        <option value="">Selecione</option>
+                        @foreach($users as $user) 
+                            <option value="{{$user->id}}">{{$user->name}}</option>
+                        @endforeach
+                    </select>
                 </div>
                 <br>
                 <div class="form-group">

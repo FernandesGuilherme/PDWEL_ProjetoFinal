@@ -45,6 +45,4 @@ class User extends Authenticatable
     public function medicines(){
         return $this->hasMany(Medicine::class, 'id_user', 'id');
     }
-
-
 }
