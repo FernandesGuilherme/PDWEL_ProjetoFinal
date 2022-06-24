@@ -11,9 +11,11 @@ use Illuminate\Http\Request;
 class MedicineController extends Controller
 {
     private $objUser;
+    private $objMedicine;
 
     public function __construct(){
         $this->objUser=new User();
+        $this->objMedicine=new Medicine();
     }
 
     /**
@@ -71,12 +73,16 @@ class MedicineController extends Controller
      */
     public function edit($id)
     {
-        $medicines = Medicine::where('id',$id)->first();
-        if(!empty($medicines)){
-            return view('medicines.edit', ['medicines'=>$medicines]);
-        }else{
-            return redirect()->route('medicines-index');
-        }
+        $medicines = $this->objMedicine->find($id);
+        $users = $this->objUser->all();
+        return view('medicines.edit', compact('medicines', 'users'));
+
+        //$medicines = Medicine::where('id',$id)->first();
+        //if(!empty($medicines)){
+        //    return view('medicines.edit', ['medicines'=>$medicines]);
+        //}else{
+        //    return redirect()->route('medicines-index');
+        //}
         
     }
 
